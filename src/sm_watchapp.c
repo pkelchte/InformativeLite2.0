@@ -167,8 +167,8 @@ void reset() {
 
 void battery_layer_update_callback(Layer *me, GContext* ctx) {
 	
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_context_set_fill_color(ctx, GColorWhite);
+	graphics_context_set_stroke_color(ctx, GColorWhite);
+	graphics_context_set_fill_color(ctx, GColorBlack);
 
 	graphics_fill_rect(ctx, GRect(2, 2, (int)((batteryPercent/100.0)*20.0), 10), 0, GCornerNone);
 	
@@ -176,8 +176,8 @@ void battery_layer_update_callback(Layer *me, GContext* ctx) {
 
 void pebble_battery_layer_update_callback(Layer *me, GContext* ctx) {
 	
-	graphics_context_set_stroke_color(ctx, GColorBlack);
-	graphics_context_set_fill_color(ctx, GColorWhite);
+	graphics_context_set_stroke_color(ctx, GColorWhite);
+	graphics_context_set_fill_color(ctx, GColorBlack);
 
 	graphics_fill_rect(ctx, GRect(2, 2, (int)((batteryPercent/100.0)*20.0), 10), 0, GCornerNone);
 	
@@ -265,14 +265,14 @@ static void init(void) {
 	layer_add_child(window_layer, animated_layer[WEATHER_LAYER]);
 
 	text_weather_cond_layer = text_layer_create(GRect(30, 12, 70, 15));
-	text_layer_set_text_color(text_weather_cond_layer, GColorWhite);
+	text_layer_set_text_color(text_weather_cond_layer, GColorBlack);
 	text_layer_set_background_color(text_weather_cond_layer, GColorClear);
 	text_layer_set_font(text_weather_cond_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
 	layer_add_child(animated_layer[WEATHER_LAYER], text_layer_get_layer(text_weather_cond_layer));
 	text_layer_set_text(text_weather_cond_layer, "Updating"); 	
 
 	text_weather_temp_layer = text_layer_create(GRect(30, 0, 70, 15));
-	text_layer_set_text_color(text_weather_temp_layer, GColorWhite);
+	text_layer_set_text_color(text_weather_temp_layer, GColorBlack);
 	text_layer_set_background_color(text_weather_temp_layer, GColorClear);
 	text_layer_set_font(text_weather_temp_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
 	layer_add_child(animated_layer[WEATHER_LAYER], text_layer_get_layer(text_weather_temp_layer));
@@ -299,7 +299,7 @@ static void init(void) {
 
 	text_mail_layer = text_layer_create(GRect(15, 130, 30, 48));
 	text_layer_set_text_alignment(text_mail_layer, GTextAlignmentCenter);
-	text_layer_set_text_color(text_mail_layer, GColorBlack);
+	text_layer_set_text_color(text_mail_layer, GColorWhite);
 	text_layer_set_background_color(text_mail_layer, GColorClear);
 	text_layer_set_font(text_mail_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_mail_layer));
@@ -307,7 +307,7 @@ static void init(void) {
 
 	text_sms_layer = text_layer_create(GRect(64, 134, 30, 48));
 	text_layer_set_text_alignment(text_sms_layer, GTextAlignmentCenter);
-	text_layer_set_text_color(text_sms_layer, GColorBlack);
+	text_layer_set_text_color(text_sms_layer, GColorWhite);
 	text_layer_set_background_color(text_sms_layer, GColorClear);
 	text_layer_set_font(text_sms_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_sms_layer));
@@ -315,7 +315,7 @@ static void init(void) {
 
 	text_phone_layer = text_layer_create(GRect(115, 130, 30, 48));
 	text_layer_set_text_alignment(text_phone_layer, GTextAlignmentCenter);
-	text_layer_set_text_color(text_phone_layer, GColorWhite);
+	text_layer_set_text_color(text_phone_layer, GColorBlack);
 	text_layer_set_background_color(text_phone_layer, GColorClear);
 	text_layer_set_font(text_phone_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_phone_layer));
