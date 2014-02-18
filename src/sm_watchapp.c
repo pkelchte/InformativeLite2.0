@@ -157,6 +157,15 @@ void rcv(DictionaryIterator *received, void *context) {
 		bitmap_layer_set_bitmap(weather_image, weather_status_imgs[t->value->uint8]);	  	
 	}
 
+	t=dict_find(received, SM_COUNT_BATTERY_KEY); 
+	if (t!=NULL) {
+		batteryPercent = t->value->uint8;
+		layer_mark_dirty(battery_layer);
+		
+		snprintf(string_buffer, sizeof(string_buffer), "%d", batteryPercent);
+		APP_LOG(APP_LOG_LEVEL_DEBUG, "Phone Battery: %d", batteryPercent);
+	}	
+	
 }
 
 void reset() {
@@ -179,7 +188,7 @@ void pebble_battery_layer_update_callback(Layer *me, GContext* ctx) {
 	graphics_context_set_stroke_color(ctx, GColorBlack);
 	graphics_context_set_fill_color(ctx, GColorWhite);
 
-	graphics_fill_rect(ctx, GRect(2, 2, (int)((batteryPercent/100.0)*20.0), 10), 0, GCornerNone);
+	graphics_fill_rect(ctx, GRect(2, 2, (int)((batteryPblPercent/100.0)*20.0), 10), 0, GCornerNone);
 	
 }
 
@@ -327,15 +336,18 @@ static void init(void) {
 	
 	batteryPercent = 100;
 	layer_mark_dirty(battery_layer);
-
+	
 	pebble_battery_layer = layer_create(GRect(144-27, 1, 20, 10));
 	layer_set_update_proc(pebble_battery_layer, pebble_battery_layer_update_callback);
 	layer_add_child(status_layer, pebble_battery_layer);
 	
 	BatteryChargeState pbl_batt = battery_state_service_peek();
 	batteryPblPercent = pbl_batt.charge_percent;
-	layer_mark_dirty(pebble_battery_layer);
+	
+	APP_LOG(APP_LOG_LEVEL_DEBUG, "Pebble Battery: %d", pbl_batt.charge_percent);
 
+	layer_mark_dirty(pebble_battery_layer);
+	
 	if (bluetooth_connection_service_peek()) {
 		weather_img = 0;
 	} else {
