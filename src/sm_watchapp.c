@@ -289,7 +289,7 @@ static void init(void) {
 
 	text_date_layer = text_layer_create(bg_bounds);
 	text_layer_set_text_alignment(text_date_layer, GTextAlignmentCenter);
-	text_layer_set_text_color(text_date_layer, GColorBlack);
+	text_layer_set_text_color(text_date_layer, GColorWhite);
 	text_layer_set_background_color(text_date_layer, GColorClear);
 	layer_set_frame(text_layer_get_layer(text_date_layer), GRect(0, 94, 144, 168-94));
 	text_layer_set_font(text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_DROID_SANS_18)));
@@ -297,7 +297,7 @@ static void init(void) {
 
 	text_time_layer = text_layer_create(bg_bounds);
 	text_layer_set_text_alignment(text_time_layer, GTextAlignmentCenter);
-	text_layer_set_text_color(text_time_layer, GColorBlack);
+	text_layer_set_text_color(text_time_layer, GColorWhite);
 	text_layer_set_background_color(text_time_layer, GColorClear);
 	layer_set_frame(text_layer_get_layer(text_time_layer), GRect(0, 35, 144, 168-35));
 	text_layer_set_font(text_time_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_DROID_SANS_BOLD_54)));
