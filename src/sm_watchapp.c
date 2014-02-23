@@ -10,7 +10,7 @@ typedef enum {WEATHER_LAYER, NUM_LAYERS} AnimatedLayers;
 
 static PropertyAnimation *ani_out, *ani_in;
 
-static TextLayer *text_weather_cond_layer, *text_weather_temp_layer;
+static TextLayer *text_weather_temp_layer;
 static TextLayer *text_date_layer, *text_time_layer;
 static TextLayer *text_mail_layer, *text_sms_layer, *text_phone_layer;
 
@@ -115,12 +115,12 @@ void rcv(DictionaryIterator *received, void *context) {
 
 
 
-	t=dict_find(received, SM_WEATHER_COND_KEY); 
+	/*t=dict_find(received, SM_WEATHER_COND_KEY); 
 	if (t!=NULL) {
 		memcpy(weather_cond_str, t->value->cstring, strlen(t->value->cstring));
         weather_cond_str[strlen(t->value->cstring)] = '\0';
 		text_layer_set_text(text_weather_cond_layer, weather_cond_str); 	
-	}
+	}*/
 
 	t=dict_find(received, SM_WEATHER_TEMP_KEY); 
 	if (t!=NULL) {
@@ -170,7 +170,7 @@ void rcv(DictionaryIterator *received, void *context) {
 
 void reset() {
 	
-	text_layer_set_text(text_weather_cond_layer, "Updating..."); 	
+	//text_layer_set_text(text_weather_cond_layer, "Updating..."); 	
 	
 }
 
@@ -273,17 +273,17 @@ static void init(void) {
 	animated_layer[WEATHER_LAYER] = layer_create(GRect(0, 0, 144, 168));
 	layer_add_child(window_layer, animated_layer[WEATHER_LAYER]);
 
-	text_weather_cond_layer = text_layer_create(GRect(30, 12, 70, 15));
+	/*text_weather_cond_layer = text_layer_create(GRect(30, 12, 70, 15));
 	text_layer_set_text_color(text_weather_cond_layer, GColorWhite);
 	text_layer_set_background_color(text_weather_cond_layer, GColorClear);
 	text_layer_set_font(text_weather_cond_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
 	layer_add_child(animated_layer[WEATHER_LAYER], text_layer_get_layer(text_weather_cond_layer));
-	text_layer_set_text(text_weather_cond_layer, "Updating"); 	
+	text_layer_set_text(text_weather_cond_layer, "Updating");*/
 
-	text_weather_temp_layer = text_layer_create(GRect(30, 0, 70, 15));
+	text_weather_temp_layer = text_layer_create(GRect(28, 3, 35, 26));
 	text_layer_set_text_color(text_weather_temp_layer, GColorWhite);
 	text_layer_set_background_color(text_weather_temp_layer, GColorClear);
-	text_layer_set_font(text_weather_temp_layer, fonts_get_system_font(FONT_KEY_GOTHIC_14));
+	text_layer_set_font(text_weather_temp_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_DROID_SANS_18)));
 	layer_add_child(animated_layer[WEATHER_LAYER], text_layer_get_layer(text_weather_temp_layer));
 	text_layer_set_text(text_weather_temp_layer, "--°"); 	
 
@@ -330,14 +330,14 @@ static void init(void) {
 	layer_add_child(status_layer, text_layer_get_layer(text_phone_layer));
 	text_layer_set_text(text_phone_layer, "-"); 
 
-	battery_layer = layer_create(GRect(144-27, 15, 20, 10));
+	battery_layer = layer_create(GRect(144-26, 15, 20, 10));
 	layer_set_update_proc(battery_layer, battery_layer_update_callback);
 	layer_add_child(status_layer, battery_layer);
 	
 	batteryPercent = 100;
 	layer_mark_dirty(battery_layer);
 	
-	pebble_battery_layer = layer_create(GRect(144-27, 1, 20, 10));
+	pebble_battery_layer = layer_create(GRect(144-26, 1, 20, 10));
 	layer_set_update_proc(pebble_battery_layer, pebble_battery_layer_update_callback);
 	layer_add_child(status_layer, pebble_battery_layer);
 	
@@ -354,7 +354,7 @@ static void init(void) {
 		weather_img = NUM_WEATHER_IMAGES - 1;
 	}
 
-	weather_image = bitmap_layer_create(GRect(0, 3, 30, 30));
+	weather_image = bitmap_layer_create(GRect(0, 1, 30, 30));
 	layer_add_child(animated_layer[WEATHER_LAYER], bitmap_layer_get_layer(weather_image));
 	bitmap_layer_set_bitmap(weather_image, weather_status_imgs[weather_img]);
 
@@ -372,7 +372,7 @@ static void deinit(void) {
 	animation_destroy((Animation*)ani_in);
 	animation_destroy((Animation*)ani_out);
 	
-	text_layer_destroy(text_weather_cond_layer);
+	//text_layer_destroy(text_weather_cond_layer);
 	text_layer_destroy(text_weather_temp_layer);
 	text_layer_destroy(text_date_layer);
 	text_layer_destroy(text_time_layer);
