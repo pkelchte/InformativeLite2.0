@@ -318,7 +318,7 @@ static void init(void) {
   layer_set_hidden((Layer *)mail_image, true);
   bitmap_layer_set_bitmap(mail_image, ml_image);
   
-	text_mail_layer = text_layer_create(GRect(15, 130, 30, 48));
+	text_mail_layer = text_layer_create(GRect(15, 131, 30, 48));
 	text_layer_set_text_alignment(text_mail_layer, GTextAlignmentCenter);
 	text_layer_set_text_color(text_mail_layer, GColorBlack);
 	text_layer_set_background_color(text_mail_layer, GColorClear);
