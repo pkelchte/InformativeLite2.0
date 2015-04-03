@@ -1,88 +1,105 @@
 {
-    "versionLabel": "1.2.1",
-    "uuid": "e944c919-7ae9-4737-8033-ac073a1b8a90",
     "appKeys": {
         "dummy": 0
     },
-    "longName": "DStatus",
-    "versionCode": 1,
     "capabilities": [
         ""
     ],
-    "shortName": "DStatus",
     "companyName": "auruspex",
-    "watchapp": {
-        "watchface": true
-    },
+    "longName": "DStatus",
+    "projectType": "native",
     "resources": {
         "media": [
             {
-                "type": "font",
-                "name": "FONT_DROID_SANS_18",
-                "file": "fonts/DroidSans.ttf"
+                "file": "images/mail.png",
+                "name": "IMAGE_MAIL",
+                "type": "png"
+            },
+            {
+                "file": "images/text.png",
+                "name": "IMAGE_TEXT",
+                "type": "png"
+            },
+            {
+                "file": "images/call.png",
+                "name": "IMAGE_CALL",
+                "type": "png"
+            },
+            {
+                "file": "images/background.png",
+                "name": "IMAGE_BACKGROUND",
+                "type": "png"
+            },
+            {
+                "file": "images/thunder.png",
+                "name": "IMAGE_THUNDER",
+                "type": "png"
+            },
+            {
+                "file": "images/snow.png",
+                "name": "IMAGE_SNOW",
+                "type": "png"
+            },
+            {
+                "file": "images/fog.png",
+                "name": "IMAGE_FOG",
+                "type": "png"
+            },
+            {
+                "file": "images/wind.png",
+                "name": "IMAGE_WIND",
+                "type": "png"
+            },
+            {
+                "file": "images/sun_cloud.png",
+                "name": "IMAGE_SUN_CLOUD",
+                "type": "png"
+            },
+            {
+                "file": "images/cloud.png",
+                "name": "IMAGE_CLOUD",
+                "type": "png"
+            },
+            {
+                "file": "images/rain.png",
+                "name": "IMAGE_RAIN",
+                "type": "png"
+            },
+            {
+                "file": "images/sun.png",
+                "name": "IMAGE_SUN",
+                "type": "png"
+            },
+            {
+                "file": "images/disconnect_large.png",
+                "name": "IMAGE_DISCONNECT",
+                "type": "png"
+            },
+            {
+                "file": "images/app_icon.png",
+                "menuIcon": true,
+                "name": "IMAGE_MENU_ICON",
+                "type": "png"
             },
             {
                 "characterRegex": "[0-9:]",
-                "type": "font",
+                "file": "fonts/DroidSans-Bold.ttf",
                 "name": "FONT_DROID_SANS_BOLD_54",
-                "file": "fonts/DroidSans-Bold.ttf"
+                "type": "font"
             },
             {
-                "menuIcon": true,
-                "type": "png",
-                "name": "IMAGE_MENU_ICON",
-                "file": "images/app_icon.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_BACKGROUND",
-                "file": "images/background.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_DISCONNECT",
-                "file": "images/disconnect_large.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_SUN",
-                "file": "images/sun.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_RAIN",
-                "file": "images/rain.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_CLOUD",
-                "file": "images/cloud.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_SUN_CLOUD",
-                "file": "images/sun_cloud.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_WIND",
-                "file": "images/wind.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_FOG",
-                "file": "images/fog.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_SNOW",
-                "file": "images/snow.png"
-            },
-            {
-                "type": "png",
-                "name": "IMAGE_THUNDER",
-                "file": "images/thunder.png"
+                "file": "fonts/DroidSans.ttf",
+                "name": "FONT_DROID_SANS_18",
+                "type": "font"
             }
         ]
+    },
+    "sdkVersion": "2",
+    "shortName": "DStatus",
+    "uuid": "e944c919-7ae9-4737-8033-ac073a1b8a90",
+    "versionCode": 1,
+    "versionLabel": "1.3",
+    "watchapp": {
+        "watchface": true
     }
 }
