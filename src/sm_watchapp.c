@@ -313,7 +313,7 @@ static void init(void) {
 	layer_add_child(window_layer, status_layer);
 
   ml_image = gbitmap_create_with_resource(RESOURCE_ID_IMAGE_MAIL);
-  mail_image = bitmap_layer_create(GRect(12, 136, 38, 27));
+  mail_image = bitmap_layer_create(GRect(11, 136, 38, 27));
   layer_add_child(status_layer, bitmap_layer_get_layer(mail_image));
   layer_set_hidden((Layer *)mail_image, true);
   bitmap_layer_set_bitmap(mail_image, ml_image);
