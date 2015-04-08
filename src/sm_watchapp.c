@@ -297,8 +297,8 @@ static void init(void) {
 	text_layer_set_text_alignment(text_date_layer, GTextAlignmentCenter);
 	text_layer_set_text_color(text_date_layer, GColorWhite);
 	text_layer_set_background_color(text_date_layer, GColorClear);
-	layer_set_frame(text_layer_get_layer(text_date_layer), GRect(0, 94, 144, 168-94));
-	text_layer_set_font(text_date_layer, fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_DROID_SANS_18)));
+	layer_set_frame(text_layer_get_layer(text_date_layer), GRect(0, 91, 144, 168-94));
+	text_layer_set_font(text_date_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28));
 	layer_add_child(window_layer, text_layer_get_layer(text_date_layer));
 
 	text_time_layer = text_layer_create(bg_bounds);
@@ -318,11 +318,11 @@ static void init(void) {
   layer_set_hidden((Layer *)mail_image, true);
   bitmap_layer_set_bitmap(mail_image, ml_image);
   
-	text_mail_layer = text_layer_create(GRect(15, 131, 30, 48));
+	text_mail_layer = text_layer_create(GRect(16, 126, 30, 48));
 	text_layer_set_text_alignment(text_mail_layer, GTextAlignmentCenter);
 	text_layer_set_text_color(text_mail_layer, GColorBlack);
 	text_layer_set_background_color(text_mail_layer, GColorClear);
-	text_layer_set_font(text_mail_layer, fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+	text_layer_set_font(text_mail_layer, fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_mail_layer));
 	layer_set_hidden((Layer *)text_mail_layer, true);
 
@@ -332,11 +332,11 @@ static void init(void) {
   layer_add_child(status_layer, bitmap_layer_get_layer(text_image));
   bitmap_layer_set_bitmap(text_image, txt_image);
 
-	text_sms_layer = text_layer_create(GRect(64, 134, 30, 48));
+	text_sms_layer = text_layer_create(GRect(64, 128, 30, 48));
 	text_layer_set_text_alignment(text_sms_layer, GTextAlignmentCenter);
 	text_layer_set_text_color(text_sms_layer, GColorBlack);
 	text_layer_set_background_color(text_sms_layer, GColorClear);
-	text_layer_set_font(text_sms_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+	text_layer_set_font(text_sms_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_sms_layer));
 	layer_set_hidden((Layer *)text_sms_layer, true);
 
@@ -346,11 +346,11 @@ static void init(void) {
   layer_set_hidden((Layer *)call_image, true);
   bitmap_layer_set_bitmap(call_image, cl_image);
 
-	text_phone_layer = text_layer_create(GRect(115, 130, 30, 48));
+	text_phone_layer = text_layer_create(GRect(116, 126, 30, 48));
 	text_layer_set_text_alignment(text_phone_layer, GTextAlignmentCenter);
 	text_layer_set_text_color(text_phone_layer, GColorWhite);
 	text_layer_set_background_color(text_phone_layer, GColorClear);
-	text_layer_set_font(text_phone_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_18_BOLD));
+	text_layer_set_font(text_phone_layer,  fonts_get_system_font(FONT_KEY_GOTHIC_28_BOLD));
 	layer_add_child(status_layer, text_layer_get_layer(text_phone_layer));
 	layer_set_hidden((Layer *)text_phone_layer, true); 
 
