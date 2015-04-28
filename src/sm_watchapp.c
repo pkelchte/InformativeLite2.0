@@ -235,7 +235,7 @@ void bluetoothChanged(bool connected) {
 		app_timer_register(5000, reconnect, NULL);
 	} else {
 		bitmap_layer_set_bitmap(weather_image, weather_status_imgs[NUM_WEATHER_IMAGES-1]);
-		vibes_double_pulse();
+		//vibes_double_pulse();
 	}
 	
 }

@@ -11,11 +11,6 @@
     "resources": {
         "media": [
             {
-                "file": "images/screenshot1.png",
-                "name": "appicon",
-                "type": "png"
-            },
-            {
                 "file": "images/mail.png",
                 "name": "IMAGE_MAIL",
                 "type": "png"
